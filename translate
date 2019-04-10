@@ -15,6 +15,8 @@ def main():
     parser.add_argument('-c', '--detect', action='store_true', default=False,
         help='')
     args = parser.parse_args()
+    if '-' == args.text:
+        args.text = sys.stdin.read()
     translator = Translator()
 
     if args.detect:
