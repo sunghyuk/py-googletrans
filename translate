@@ -17,6 +17,7 @@ def main():
     args = parser.parse_args()
     if '-' == args.text:
         args.text = sys.stdin.read()
+    args.text = unicode(args.text, 'utf-8')
     translator = Translator()
 
     if args.detect:
